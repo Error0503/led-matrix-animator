@@ -1,0 +1,91 @@
+body {
+  display: flex;
+  gap: 2em;
+}
+
+#left {
+  width: 40vw;
+  max-width: 40vw;
+}
+
+#right {
+  width: 60vw;
+  max-width: 60vw;
+}
+
+.main-table {
+  transform: scale(1, -1);
+  background-color: #1f1f1f;
+  padding: 7px;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 100%;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 100%;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: red;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.saved-frames {
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  overflow-y: scroll;
+  max-height: 60vh;
+}
+
+.mini-table {
+  transform: scale(1, -1);
+  background-color: #1f1f1f;
+  padding: 1px;
+}
+
+.mini-table > tr > td {
+  width: 10px;
+  height: 10px;
+}
